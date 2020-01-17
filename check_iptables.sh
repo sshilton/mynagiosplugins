@@ -1,5 +1,6 @@
 #! /bin/sh
 #set -x
+# Cheep iptables counter to see how my firewall is doing
 country="$1"
 count=`sudo iptables -L -n -w | grep "$country Country Drop" | wc -l`
 #echo $count
