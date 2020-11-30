@@ -2,7 +2,7 @@
 #set -x
 # Cheep iptables counter to see how my firewall is doing
 country="$1"
-count=`sudo iptables -L -n -w | grep "$country Country Drop" | wc -l`
+count=`sudo -n iptables -L -n -w | grep "$country Country Drop" | wc -l`
 #echo $count
 	if [ $count -gt 0 ];then
 		echo "OK: $count rules for blocking $country |$country=$count"
