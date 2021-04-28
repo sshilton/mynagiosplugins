@@ -10,7 +10,7 @@ count=`sudo -n iptables -L -n -w | grep "$country Country Drop" | wc -l`
 		echo "OK: $count rules for blocking $country |$country=$count"
 		exit 0
 	else
-		echo "CRITICAL: iptables has $count rules for $country -are you sure your sudo rights are correct |$country=$count"
+		echo "CRITICAL: iptables has $count rules for $country -are you sure your sudo rights are correct `sudo -U nagios -l` |$country=$count"
 		exit 2
 	fi
 
