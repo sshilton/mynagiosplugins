@@ -3,6 +3,7 @@
 # Cheep iptables counter to see how my firewall is doing
 # NOTE whatver user runs the nagios/ncpa check need to have nopasswd sudo access for iptables 
 # Use at your own risk
+# cloudwatch2038@outlook.com
 country="$1"
 count=`sudo -n iptables -L -n -w | grep "$country Country Drop" | wc -l`
 #echo $count
